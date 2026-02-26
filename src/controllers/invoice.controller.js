@@ -113,6 +113,14 @@ export const createInvoice = async (req, res, next) => {
       'name email',
     );
 
+    // Safety check added (only addition)
+    if (!createdInvoice) {
+      return res.status(500).json({
+        success: false,
+        message: 'Invoice created but could not retrieve record',
+      });
+    }
+
     res.status(201).json({
       success: true,
       data: createdInvoice,
