@@ -51,7 +51,7 @@ export const createProduct = async (req, res, next) => {
 // @desc    Get all products
 // @route   GET /api/products
 // @access  Public
-export const getProducts = async (req, res, next) => {
+export const getAllProducts = async (req, res, next) => {
   try {
     const {
       page = 1,
